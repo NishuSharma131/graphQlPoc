@@ -1,0 +1,44 @@
+type Mutation{
+	
+	createUser(user:User):UserResponse
+	createApp(createApplicationRequest:CreateApplicationRequest):ApplicatonResponse
+	
+}
+
+type UserResponse{
+appid: Int
+userid: String
+}
+
+input CreateApplicationRequest{
+appcode: String
+app_name:String
+app_description:String
+country:String
+concept:String
+allUsers:[CreateUserRequest]
+}
+
+input CreateUserRequest{
+userid: String
+}
+
+type ApplicatonResponse{
+appid:Int
+appcode: String
+app_name:String
+app_description:String
+country:String
+concept:String
+allUsers:[UserResponse]
+}
+
+input User{
+appid:Int!
+userid:String
+}
+
+type UserResponse{
+appid:Int!
+userid:String
+}

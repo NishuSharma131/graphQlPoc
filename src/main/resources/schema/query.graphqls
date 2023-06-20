@@ -1,0 +1,29 @@
+type Query{
+	firstQuery:String
+	fullName(firstName:String , lastName:String):String
+	fullNameByRequest(request : Request):String
+	application(appid: Int):ApplicatonResponse
+	user(appid: Int):UserResponse
+	
+}
+
+input Request{
+firstName:String!
+lastName:String
+
+}
+
+
+type ApplicatonResponse{
+appid: Int
+appcode: String
+app_name: String
+app_description: String
+country: String
+concept: String
+}
+
+type UserResponse{
+appid: Int
+userid: String
+}
